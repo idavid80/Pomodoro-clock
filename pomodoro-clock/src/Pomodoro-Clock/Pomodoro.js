@@ -1,34 +1,73 @@
 import React, { useState, useEffect } from "react";
+import "./Pomodoro.css";
+import CuentaAtras from "./CountDown";
 
-const Pomodoro = ({ MinSeg }) => {
-  const { minutos = 0, segundos = 0 } = MinSeg;
-  const [[mins, segs], setTime] = useState([minutos, segundos]);
+const Pomodoro = (props) => {
+  let trabajo = 3;
+  let descanso = 1;
+  let ciclos = 4;
+  const [minutos, setMinutos] = useState(0);
+  const [segundos, setSegundos] = useState(0);
+  const [sesiones, setSesiones] = useState(0);
+  const [metodo, setMetodo] = useState();
+  const [pausa, setPausa] = useState(true);
 
-  const tiempoHexagesimal = () => {
-    if (mins === 0 && segs === 0) reset(MinSeg);
-    else if (segs === 0) {
-      setTime([mins - 1, 59]);
-    } else {
-      setTime([mins, segs - 1]);
+  function pausarTiempo() {
+    setPausa(!pausa);
+  }
+
+  function reiniciarTiempo() {
+    if (sesiones === 0) {
+      setSesiones(ciclos);
+      setSegundos(trabajo);
+      setPausa(false);
+      setMetodo(true);
     }
-  };
 
-  const reset = () => {
-    setTime([parseInt(minutos), parseInt(segundos + 5)]);
-  };
+    if (segundos === 0 && minutos === 0) {
+      setMetodo(!metodo);
+      if (sesiones > 0) {
+        setSesiones(sesiones - 1);
+      } else descanso = descanso * 2;
+    }
+    setSegundos(metodo === true ? descanso : trabajo);
+    //setMinutos(metodo===true ? trabajo : descanso);
+  }
 
+  function cuenta() {
+    if (pausa !== true) {
+      if (segundos !== 0) {
+        setSegundos(segundos - 1);
+      }
+    }
+    if (segundos === 0 && minutos !== 0) {
+      setMinutos(minutos - 1);
+      setSegundos(segundos + 59);
+    }
+  }
   useEffect(() => {
-    const tiempo = setInterval(() => tiempoHexagesimal(), 1000);
-    return () => clearInterval(tiempo);
+    setTimeout(cuenta, 1000);
   });
 
   return (
-    <div>
-      <p>{`${mins.toString().padStart(2, "0")}:${segs
-        .toString()
-        .padStart(2, "0")}`}</p>
+    <div className="temporizador">
+      <CuentaAtras minutos={minutos} segundos={segundos} metodo={metodo} />
+      <div className="botones">
+        <button
+          onClick={reiniciarTiempo}
+          disabled={segundos === 0 && minutos === 0 ? false : true}
+        >
+          {metodo === undefined
+            ? "Empezar"
+            : segundos === 0 && minutos === 0
+            ? "Continuar"
+            : "Ciclo " + sesiones}
+        </button>
+        <button onClick={pausarTiempo}>
+          {pausa === true ? "Reanudar" : "Pausar"}
+        </button>
+      </div>
     </div>
   );
 };
-
 export default Pomodoro;

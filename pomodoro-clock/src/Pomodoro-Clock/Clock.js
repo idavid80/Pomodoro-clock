@@ -1,31 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import "./Clock.css";
 
- const Clock = ({HorMinSeg}) => {
-	   
+const Clock = () => {
   var fechaHora = new Date();
-  const {hor=fechaHora.getHours(), min = fechaHora.getMinutes(), seg = fechaHora.getSeconds()} = HorMinSeg
-/*   const [horas, setHoras] = useState(hor);
-  const [minutos, setMinutos] = useState(min); */
-  const [segundos, setSegundos] = useState(seg);
 
-/* console.log(minutos,setMinutos,) */
-  
-    useEffect(() => {
-      
-      const tiempo = setInterval(() => setSegundos(segundos-1), 1000);
-      return () => clearInterval(tiempo);
-    });
+  let hor = fechaHora.getHours();
+  let min = fechaHora.getMinutes();
+  let seg = fechaHora.getSeconds();
 
-  
   return (
-      <div>
-          <p>{`${hor
-          .toString()
-          .padStart(2, '0')}:${min
-          .toString()
-          .padStart(2, '0')}:${seg.toString().padStart(2, '0')}`}</p> 
-      </div>
-  );
-}
+    <div className="inicio_trabajo">
 
-export default Clock; 
+        <h3>Hora de Inicio</h3>
+
+      <h4>{`${hor.toString().padStart(2, "0")}:${min
+        .toString()
+        .padStart(2, "0")}:${seg.toString().padStart(2, "0")}`}</h4>
+    </div>
+  );
+};
+
+export default Clock;
