@@ -3,11 +3,12 @@
   flex-direction: column;
   justify-content: center;
   background-color: rgb(0, 0, 0);
+  height: 100vh;
 }
 
 .tiempos {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 2%;
+  margin: 2%;
 }

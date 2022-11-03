@@ -1,19 +1,40 @@
+.logo_reloj {
+  color: red;
+  font-size: 4rem;
+}
+.logo_pomodoro {
+  color: green;
+  font-size: 4rem;
+}
+img {
+  width: 4rem;
+  height: 4rem;
+  max-width: 100%;
+}
+
 .logo {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.logo_reloj {
-    color: red;
-    font-size: 6rem;
+/* Logo mediano, para anchos de pantalla de entre 480 y 800px */
+@media screen and (min-width: 480px) {
+  .logo {
+     flex-wrap: row;
+  }
 }
-.logo_pomodoro
- {
-    color: green;
-    font-size: 6rem;
+
+/* Logo grande, para anchos de pantalla de entre 800 y 1280px */
+@media screen and (min-width: 800px) {
+  .logo {
+    flex-wrap: row;
+  }
 }
-img {
-    width: 6rem;
-    height: 6rem;
+
+/* Logo gigante, para anchos de pantalla de más de 1280px */
+@media screen and (min-width: 1280px) {
+  .logo {
+    flex-wrap: row;
+  }
 }
