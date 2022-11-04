@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Pomodoro.css";
-import CuentaAtras from "./CountDown";
 
 const Pomodoro = (props) => {
   let trabajo = 3;
@@ -49,9 +48,14 @@ const Pomodoro = (props) => {
     setTimeout(cuenta, 1000);
   });
 
+  const display = (digito) => digito.toString().padStart(2, "0");
+
   return (
     <div className="temporizador">
-      <CuentaAtras minutos={minutos} segundos={segundos} metodo={metodo} />
+      <h3>{metodo === true ? "Trabajando" : "Descansando"}</h3>
+      <p>
+        {display(minutos)}:{display(segundos)}
+      </p>
       <div className="botones">
         <button
           onClick={reiniciarTiempo}
