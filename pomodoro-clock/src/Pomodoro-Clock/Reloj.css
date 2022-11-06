@@ -1,0 +1,13 @@
+.reloj {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: red;
+  border-radius: 100%;
+  height: 9rem;
+  width: 9rem;
+  margin-right: 1%;
+  
+}
+
