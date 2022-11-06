@@ -8,12 +8,12 @@ import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 
 const color = red[500];
-const url = "http://www.sonidosmp3gratis.com/sounds/mario-bros%20vida.mp3"
-const sonido = new Audio(url)
+const url = "http://www.sonidosmp3gratis.com/sounds/mario-bros%20vida.mp3";
+const sonido = new Audio(url);
 
 const Pomodoro = () => {
-  let trabajo = 3;
-  let descanso = 1;
+  let trabajo = 25;
+  let descanso = 10;
   let ciclos = 4;
   const [minutos, setMinutos] = useState(0);
   const [segundos, setSegundos] = useState(0);
@@ -22,7 +22,7 @@ const Pomodoro = () => {
   const [pausa, setPausa] = useState(true);
 
   if (segundos === 0 && minutos === 0) {
-  sonido.play()
+    sonido.play();
   }
 
   function pausarTiempo() {
@@ -32,7 +32,8 @@ const Pomodoro = () => {
   function reiniciarTiempo() {
     if (sesiones === 0) {
       setSesiones(ciclos);
-      setSegundos(trabajo);
+      //setSegundos(trabajo); activar segundos y quitar minutos para depurar
+      setMinutos(trabajo);
       setPausa(false);
       setMetodo(true);
     }
@@ -44,8 +45,8 @@ const Pomodoro = () => {
         setSesiones(sesiones - 1);
       } else descanso = descanso * 2;
     }
-    setSegundos(metodo === true ? descanso : trabajo);
-    //setMinutos(metodo===true ? trabajo : descanso);
+    //setSegundos(metodo === true ? descanso : trabajo); activar segundos y quitar minutos para depurar
+    setMinutos(metodo === true ? descanso : trabajo);
   }
 
   function cuenta() {
