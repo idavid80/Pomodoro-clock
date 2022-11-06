@@ -8,8 +8,10 @@ import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 
 const color = red[500];
+const url = "http://www.sonidosmp3gratis.com/sounds/mario-bros%20vida.mp3"
+const sonido = new Audio(url)
 
-const Pomodoro = (props) => {
+const Pomodoro = () => {
   let trabajo = 3;
   let descanso = 1;
   let ciclos = 4;
@@ -18,6 +20,10 @@ const Pomodoro = (props) => {
   const [sesiones, setSesiones] = useState(0);
   const [metodo, setMetodo] = useState();
   const [pausa, setPausa] = useState(true);
+
+  if (segundos === 0 && minutos === 0) {
+  sonido.play()
+  }
 
   function pausarTiempo() {
     setPausa(!pausa);
@@ -33,6 +39,7 @@ const Pomodoro = (props) => {
 
     if (segundos === 0 && minutos === 0) {
       setMetodo(!metodo);
+
       if (sesiones > 0) {
         setSesiones(sesiones - 1);
       } else descanso = descanso * 2;
@@ -59,24 +66,29 @@ const Pomodoro = (props) => {
   const display = (digito) => digito.toString().padStart(2, "0");
 
   return (
-    <Container maxWidth="sm"  justifyContent="center" alignItems="center">
-      <Stack direction="column" spacing={1}  justifyContent="center" alignItems="center">
+    <Container fixed maxWidth="sm" justifyContent="center" alignItems="center">
+      <Stack
+        direction="column"
+        spacing={1}
+        justifyContent="center"
+        alignItems="center"
+      >
         <Typography color={color} variant="h6">
           {metodo === true ? "Trabajando" : "Descansando"}
         </Typography>
         <Typography variant="h3" color={color}>
           {display(minutos)}:{display(segundos)}
         </Typography>
-        </Stack>
-        <Stack direction="row" spacing={1}  justifyContent="center">
-        <Button size="large" variant="outlined" onClick={reiniciarTiempo}>
+      </Stack>
+      <Stack direction="row" spacing={3} justifyContent="center">
+        <Button variant="outlined" onClick={reiniciarTiempo}>
           {metodo === undefined
             ? "Empezar"
             : segundos === 0 && minutos === 0
             ? "Continuar"
             : "Ciclo " + sesiones}
         </Button>
-        <Button size="large" variant="outlined" onClick={pausarTiempo}>
+        <Button variant="outlined" onClick={pausarTiempo}>
           <Tab
             icon={<AlarmIcon />}
             label={pausa === true ? "Reanudar" : "Pausar"}

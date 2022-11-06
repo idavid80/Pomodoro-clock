@@ -22,6 +22,7 @@ img {
 @media screen and (min-width: 480px) {
   .logo {
      flex-wrap: row;
+     font-size: 4rem;
   }
 }
 
