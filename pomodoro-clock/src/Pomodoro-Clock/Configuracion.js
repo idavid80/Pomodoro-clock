@@ -54,7 +54,7 @@ const ciclos = [
   },
 ];
 
-function valuetext(value: number) {
+function valuetext(value) {
   return `${value}Min.`;
 }
 
