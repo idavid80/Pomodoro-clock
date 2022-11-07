@@ -12,11 +12,8 @@ function App(props) {
       <div className="tiempos">
         <Reloj tiempo={props.tiempo} />
         <Clock />
-
       </div>
       <Pomodoro />
-
-
     </div>
   );
 }
