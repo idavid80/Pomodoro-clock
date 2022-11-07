@@ -3,21 +3,24 @@ import Logo from "./Pomodoro-Clock/Logo";
 import Reloj from "./Pomodoro-Clock/Reloj";
 import Clock from "./Pomodoro-Clock/Clock";
 import Pomodoro from "./Pomodoro-Clock/Pomodoro";
+import Stack from "@mui/material/Stack";
 
 function App(props) {
   return (
-    <div className="App">
+    <Stack>
       <Logo />
-
-      <div className="tiempos">
+      <Stack
+        direction="row"
+        spacing={1}
+        justifyContent="center"
+        alignItems="center"
+        m={2}
+      >
         <Reloj tiempo={props.tiempo} />
         <Clock />
-
-      </div>
+      </Stack>
       <Pomodoro />
-
-
-    </div>
+    </Stack>
   );
 }
 
