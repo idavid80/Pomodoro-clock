@@ -15,7 +15,8 @@ const Logo = () => {
       justifyContent="center"
       alignItems="center"
       spacing={2}
-      mb={2}
+      m={2}
+
     > 
       <Typography variant="h2" color={color1}>
         Pomodoro
