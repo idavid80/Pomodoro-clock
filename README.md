@@ -1,4 +1,4 @@
- # [Pomodoro-clock](https://github.com/idavid80/Pomodoro-clock)
+# [Pomodoro-clock](https://github.com/idavid80/Pomodoro-clock)
 
 ## Pomodoro-clock
 
@@ -14,5 +14,6 @@ Reloj que aplica el método Pomodoro. La técnica Pomodoro es un método para me
 
 ### Tecnologia utilizada
 
-<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/375px-React.svg.png" width="60" alt="React"> Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.
-<img align="center" src="https://v4.material-ui.com/static/logo.png" width="60" alt="React"> Biblioteca de diseño de componentes y herramamientas.
+```<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/375px-React.svg.png" width="60" alt="React"> Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.```
+
+```<img align="center" src="https://v4.material-ui.com/static/logo.png" width="60" alt="React"> Biblioteca de diseño de componentes y herramamientas.```
