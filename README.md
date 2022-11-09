@@ -12,7 +12,7 @@ Reloj que aplica el método Pomodoro. La técnica Pomodoro es un método para me
 - El tiempo de actividad se pueden modificar, así como los ciclos de periodos más largos (aunque se recomienda dejar la configuración por defecto que es la establecida por el método Pomodoro).
 - En pantalla aparecerá la hora actual junto con la hora de inicio de la aplicación.
 
-### Tecnologia utilizada.
+### Tecnologia utilizada
 
 <img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/375px-React.svg.png" width="60" alt="React"> Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.
 <img align="center" src="https://v4.material-ui.com/static/logo.png" width="60" alt="React"> Biblioteca de diseño de componentes y herramamientas.
