@@ -1,8 +1,18 @@
-# Pomodoro-clock
-Reloj que aplica el método Pomodoro
+ # [Pomodoro-clock](https://github.com/idavid80/Pomodoro-clock)
 
-#Información usuarios
- El usuario activará temporizador durante 25 minutos: la sesión de trabajo.
- Una vez finalizada la sesión de trabajo, el usuario puede escuchar un sonido, indicando que la sesión ha terminado, y podrá activar: la sesión de descanso (5 minutos)
- El usuario puede iniciar / pausar, detener y reiniciar los temporizadores
- Se establece una sesión de descanso larga de 10 minutos, que se activará cada 4 sesiones de descanso.
+## Pomodoro-clock
+
+Reloj que aplica el método Pomodoro. La técnica Pomodoro es un método para mejorar la administración del tiempo dedicado a una actividad. Fue creado por Francesco Cirillo a fines de la década de 1980.
+
+### Información usuarios
+
+- El usuario puede dividir el tiempo en intervalos fijos, de 25 minutos de actividad, seguidos de 5 minutos de descanso, con pausas más largas cada cuatro ciclos.
+- Cada vez que se termine un ciclo sonará una alarma avisando que puede activar el siguiente ciclo pulsando el botón "Continuar".
+- El usuario puede iniciar / pausar, detener y reiniciar los temporizadores.
+- El tiempo de actividad se pueden modificar, así como los ciclos de periodos más largos (aunque se recomienda dejar la configuración por defecto que es la establecida por el método Pomodoro).
+- En pantalla aparecerá la hora actual junto con la hora de inicio de la aplicación.
+
+### Tecnologia utilizada.
+
+<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/375px-React.svg.png" width="60" alt="React"> Biblioteca Javascript de código abierto diseñada para crear interfaces de usuario.
+<img align="center" src="https://v4.material-ui.com/static/logo.png" width="60" alt="React"> Biblioteca de diseño de componentes y herramamientas.
